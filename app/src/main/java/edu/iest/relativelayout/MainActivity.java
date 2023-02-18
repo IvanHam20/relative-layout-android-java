@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private ImageView ivContinuara;
 
+
+
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long idFila) {
         String programa = adapterView.getItemAtPosition(position).toString();
