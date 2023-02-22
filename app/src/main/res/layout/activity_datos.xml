@@ -45,7 +45,7 @@
             android:text="Canal"
             />
         <TextView
-            android:text=""
+            android:id="@+id/tvValorCanal"
             />
 
     </TableRow>
@@ -59,7 +59,7 @@
             android:text="Programa"
             />
         <TextView
-            android:text=""
+            android:id="@+id/tvValorPrograma"
             />
 
     </TableRow>
@@ -70,6 +70,7 @@
         >
 
         <Button
+            android:id="@+id/bnRegresar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_span="2"

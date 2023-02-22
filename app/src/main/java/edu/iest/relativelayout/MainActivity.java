@@ -2,6 +2,7 @@ package edu.iest.relativelayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -41,16 +42,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
+        ivContinuara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Spinner spProgramas = findViewById(R.id.spPrograma);
+                EditText etCanal = findViewById(R.id.etCanal);
+                Intent i = new Intent(MainActivity.this, DatosActivity.class);
+                i.putExtra("canal", etCanal.getText().toString());
+                i.putExtra("programa", spProgramas.getSelectedItem().toString());
+                startActivity(i);
+            }
+        });
     }
 
     private ImageView ivContinuara;
 
-
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long idFila) {
         String programa = adapterView.getItemAtPosition(position).toString();
-        Snackbar.make(adapterView, "Programa selecccionado" + programa, Snackbar.LENGTH_LONG).show();
+        Snackbar.make(adapterView, "Programa selecccionado " + programa, Snackbar.LENGTH_LONG).show();
 
         if(position == 0){
             ivContinuara.setImageResource(R.drawable.to_be_continued);
